@@ -1,0 +1,12 @@
+Uri: https://kitnovomimopromo.vercel.app/
+File Name: C:\Downloaded Web Sites\kitnovomimopromo.vercel.app\index.htm
+Content Type: text/html
+
+Uri: https://kitnovomimopromo.vercel.app/assets/index-jTU0cIz-.js
+File Name: C:\Downloaded Web Sites\kitnovomimopromo.vercel.app\assets\index-jTU0cIz-.js
+Content Type: application/javascript
+
+Uri: https://kitnovomimopromo.vercel.app/assets/index-RZ6-RZSa.css
+File Name: C:\Downloaded Web Sites\kitnovomimopromo.vercel.app\assets\index-RZ6-RZSa.css
+Content Type: text/css
+

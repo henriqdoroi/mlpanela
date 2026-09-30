@@ -1,12 +1,88 @@
-Uri: https://kitnovomimopromo.vercel.app/
-File Name: C:\Downloaded Web Sites\kitnovomimopromo.vercel.app\index.htm
+Uri: https://finalizar-brokpay.vercel.app/checkout-brand/amex.svg
+File Name: C:\Downloaded Web Sites\finalizar-brokpay.vercel.app\checkout-brand\amex.svg
+Content Type: image/svg+xml
+
+Uri: https://finalizar-brokpay.vercel.app/checkout-brand/aura.svg
+File Name: C:\Downloaded Web Sites\finalizar-brokpay.vercel.app\checkout-brand\aura.svg
+Content Type: image/svg+xml
+
+Uri: https://finalizar-brokpay.vercel.app/checkout-brand/diners.svg
+File Name: C:\Downloaded Web Sites\finalizar-brokpay.vercel.app\checkout-brand\diners.svg
+Content Type: image/svg+xml
+
+Uri: https://finalizar-brokpay.vercel.app/checkout-brand/discover.svg
+File Name: C:\Downloaded Web Sites\finalizar-brokpay.vercel.app\checkout-brand\discover.svg
+Content Type: image/svg+xml
+
+Uri: https://finalizar-brokpay.vercel.app/checkout-brand/elo.svg
+File Name: C:\Downloaded Web Sites\finalizar-brokpay.vercel.app\checkout-brand\elo.svg
+Content Type: image/svg+xml
+
+Uri: https://finalizar-brokpay.vercel.app/checkout-brand/mastercard.svg
+File Name: C:\Downloaded Web Sites\finalizar-brokpay.vercel.app\checkout-brand\mastercard.svg
+Content Type: image/svg+xml
+
+Uri: https://finalizar-brokpay.vercel.app/checkout-brand/mercado-livre.png
+File Name: C:\Downloaded Web Sites\finalizar-brokpay.vercel.app\checkout-brand\mercado-livre.png
+Content Type: image/png
+
+Uri: https://finalizar-brokpay.vercel.app/checkout-brand/pagamento-seguro.png
+File Name: C:\Downloaded Web Sites\finalizar-brokpay.vercel.app\checkout-brand\pagamento-seguro.png
+Content Type: image/png
+
+Uri: https://finalizar-brokpay.vercel.app/checkout-brand/pix.svg
+File Name: C:\Downloaded Web Sites\finalizar-brokpay.vercel.app\checkout-brand\pix.svg
+Content Type: image/svg+xml
+
+Uri: https://finalizar-brokpay.vercel.app/checkout-brand/visa.svg
+File Name: C:\Downloaded Web Sites\finalizar-brokpay.vercel.app\checkout-brand\visa.svg
+Content Type: image/svg+xml
+
+Uri: https://finalizar-brokpay.vercel.app/comprar/prd_YhGDUXwzcl4XRhZIu0OKg66_vN0ExFf2bWOATNGAqgY
+File Name: C:\Downloaded Web Sites\finalizar-brokpay.vercel.app\comprar\prd_YhGDUXwzcl4XRhZIu0OKg66_vN0ExFf2bWOATNGAqgY.html
 Content Type: text/html
 
-Uri: https://kitnovomimopromo.vercel.app/assets/index-jTU0cIz-.js
-File Name: C:\Downloaded Web Sites\kitnovomimopromo.vercel.app\assets\index-jTU0cIz-.js
+Uri: https://finalizar-brokpay.vercel.app/_next/static/immutable/chunks/0c0hxoamwjsbw.js
+File Name: C:\Downloaded Web Sites\finalizar-brokpay.vercel.app\_next\static\immutable\chunks\0c0hxoamwjsbw.js
 Content Type: application/javascript
 
-Uri: https://kitnovomimopromo.vercel.app/assets/index-RZ6-RZSa.css
-File Name: C:\Downloaded Web Sites\kitnovomimopromo.vercel.app\assets\index-RZ6-RZSa.css
+Uri: https://finalizar-brokpay.vercel.app/_next/static/immutable/chunks/0nxby1o47tm0c.js
+File Name: C:\Downloaded Web Sites\finalizar-brokpay.vercel.app\_next\static\immutable\chunks\0nxby1o47tm0c.js
+Content Type: application/javascript
+
+Uri: https://finalizar-brokpay.vercel.app/_next/static/immutable/chunks/267jhik9n25ar.js
+File Name: C:\Downloaded Web Sites\finalizar-brokpay.vercel.app\_next\static\immutable\chunks\267jhik9n25ar.js
+Content Type: application/javascript
+
+Uri: https://finalizar-brokpay.vercel.app/_next/static/immutable/chunks/2corl6wyj4669.js
+File Name: C:\Downloaded Web Sites\finalizar-brokpay.vercel.app\_next\static\immutable\chunks\2corl6wyj4669.js
+Content Type: application/javascript
+
+Uri: https://finalizar-brokpay.vercel.app/_next/static/immutable/chunks/2m48s9us98a5c.js
+File Name: C:\Downloaded Web Sites\finalizar-brokpay.vercel.app\_next\static\immutable\chunks\2m48s9us98a5c.js
+Content Type: application/javascript
+
+Uri: https://finalizar-brokpay.vercel.app/_next/static/immutable/chunks/2yd5h-uf--lvp.css
+File Name: C:\Downloaded Web Sites\finalizar-brokpay.vercel.app\_next\static\immutable\chunks\2yd5h-uf--lvp.css
 Content Type: text/css
+
+Uri: https://finalizar-brokpay.vercel.app/_next/static/immutable/chunks/30cbh3b4p6w18.js
+File Name: C:\Downloaded Web Sites\finalizar-brokpay.vercel.app\_next\static\immutable\chunks\30cbh3b4p6w18.js
+Content Type: application/javascript
+
+Uri: https://finalizar-brokpay.vercel.app/_next/static/immutable/chunks/31tcpybs-b989.js
+File Name: C:\Downloaded Web Sites\finalizar-brokpay.vercel.app\_next\static\immutable\chunks\31tcpybs-b989.js
+Content Type: application/javascript
+
+Uri: https://finalizar-brokpay.vercel.app/_next/static/immutable/chunks/3jg8fzs4yw6mv.css
+File Name: C:\Downloaded Web Sites\finalizar-brokpay.vercel.app\_next\static\immutable\chunks\3jg8fzs4yw6mv.css
+Content Type: text/css
+
+Uri: https://finalizar-brokpay.vercel.app/_next/static/immutable/chunks/3py3dqygn48z1.js
+File Name: C:\Downloaded Web Sites\finalizar-brokpay.vercel.app\_next\static\immutable\chunks\3py3dqygn48z1.js
+Content Type: application/javascript
+
+Uri: https://finalizar-brokpay.vercel.app/_next/static/immutable/chunks/turbopack-34gkeizwzup2p.js
+File Name: C:\Downloaded Web Sites\finalizar-brokpay.vercel.app\_next\static\immutable\chunks\turbopack-34gkeizwzup2p.js
+Content Type: application/javascript
 

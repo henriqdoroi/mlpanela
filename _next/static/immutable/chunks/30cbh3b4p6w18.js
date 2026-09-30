@@ -1,1 +1,1291 @@
-(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,70896,e=>{"use strict";var s=e.i(43476),a=e.i(71645),t=e.i(94492),r=e.i(98330);function i({reviews:e}){let t=(0,a.useRef)(null),[r,n]=(0,a.useState)(0);return e.length?(0,s.jsxs)("section",{className:"shop-reviews","aria-label":"Avaliações do produto",children:[(0,s.jsx)("div",{className:"shop-review-track",ref:t,onScroll:()=>{let s=t.current;if(!s||s.children.length<2)return;let a=s.children[0],r=s.children[1].offsetLeft-a.offsetLeft;r>0&&n(Math.max(0,Math.min(e.length-1,Math.round(s.scrollLeft/r))))},children:e.map(e=>(0,s.jsxs)("article",{className:"shop-review",children:[e.photo&&(0,s.jsx)("img",{src:e.photo,width:36,height:36,alt:e.name,loading:"lazy"}),(0,s.jsxs)("div",{className:"shop-stars","aria-label":`${e.rating} de 5 estrelas`,children:["★".repeat(e.rating),"☆".repeat(5-e.rating)]}),(0,s.jsx)("strong",{children:e.name}),(0,s.jsx)("p",{children:e.text})]},e.id))}),e.length>1&&(0,s.jsx)("div",{className:"shop-review-dots","aria-label":"Navegar pelas avaliações",children:e.map((e,a)=>(0,s.jsx)("button",{type:"button","aria-label":`Avalia\xe7\xe3o ${a+1}`,"aria-current":r===a?"true":void 0,onClick:()=>{let e=t.current;if(!e)return;let s=e.children[a],r=e.children[0];e.scrollTo({left:s.offsetLeft-r.offsetLeft,behavior:"smooth"})}},e.id))})]}):null}let n=[{id:"flex",name:"Mercado Envios (Flex)",days:"3 a 5 dias",amount:0},{id:"full",name:"Mercado Envios (Full)",days:"1 a 2 dias",amount:998}],o=new Map;function l(e){let s=o.get(e);if(!s){try{let a=JSON.parse(sessionStorage.getItem("tiktok:"+e)||"null");a&&/^[a-f0-9-]{36}$/i.test(a.visit)&&(s=a)}catch{}s||={visit:crypto.randomUUID()}}let a=new URL(location.href).searchParams.get("ttclid");a&&/^[A-Za-z0-9_.~-]{1,500}$/.test(a)&&(s.ttclid=a);let t=document.cookie.split("; ").find(e=>e.startsWith("_ttp="))?.slice(5);t&&/^[A-Za-z0-9_.~-]{1,250}$/.test(t)&&(s.ttp=t),o.set(e,s);try{sessionStorage.setItem("tiktok:"+e,JSON.stringify(s))}catch{}return s}async function d(e){try{await fetch("/api/tracking/start",{method:"POST",keepalive:!0,headers:{"Content-Type":"application/json"},body:JSON.stringify({product_id:e,tracking:l(e)})})}catch{}}var c=e.i(72764),h=e.i(65649),p=e.i(56420);let u=(0,p.default)("credit-card",[["rect",{width:"20",height:"14",x:"2",y:"5",rx:"2",key:"ynyp8z"}],["line",{x1:"2",x2:"22",y1:"10",y2:"10",key:"1b3vmo"}]]),m=(0,p.default)("chevron-up",[["path",{d:"m18 15-6-6-6 6",key:"153udz"}]]),x=(0,p.default)("truck",[["path",{d:"M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2",key:"wrbu53"}],["path",{d:"M15 18H9",key:"1lyqi6"}],["path",{d:"M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14",key:"lysw3i"}],["circle",{cx:"17",cy:"18",r:"2",key:"332jqn"}],["circle",{cx:"7",cy:"18",r:"2",key:"19iecd"}]]);var g=e.i(89664),j=e.i(8734);let f=(0,p.default)("package-check",[["path",{d:"M12 22V12",key:"d0xqtd"}],["path",{d:"m16 17 2 2 4-4",key:"uh5qu3"}],["path",{d:"M21 11.127V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.729l7 4a2 2 0 0 0 2 .001l1.32-.753",key:"kpkbpo"}],["path",{d:"M3.29 7 12 12l8.71-5",key:"19ckod"}],["path",{d:"m7.5 4.27 8.997 5.148",key:"9yrvtv"}]]);var y=e.i(58379),y=y,v=e.i(73134),b=e.i(1307);let N=new Set(["PAID","EXPIRED","FAILED","REFUNDED","CHARGEBACK"]);function k(e,s,a,t){if(!N.has(a))return!1;try{let a="product-order:"+e;JSON.parse(sessionStorage.getItem(a)||"{}").token===s&&sessionStorage.removeItem(a)}catch{}return t}let w=e=>new Intl.NumberFormat("pt-BR",{style:"currency",currency:"BRL"}).format(e/100);e.s(["default",0,function({product:e}){var o,p;(0,a.useEffect)(()=>{d(e.id)},[e.id]);let N="digital"===e.product_type,[C,E]=(0,a.useState)(!N||!!e.requires_buyer_name),S=N?[1,3]:[1,2,3],P=(0,a.useRef)(0),D=(0,a.useRef)(!1),[A,I]=(0,a.useState)(""),[R,L]=(0,a.useState)("flex"),_=N?0:n.find(e=>e.id===R).amount,[$,z]=(0,a.useState)(!0),[M,F]=(0,a.useState)(!1),[O,U]=(0,a.useState)(1),[T,B]=(0,a.useState)({name:"",email:"",cpf:"",phone:"",address:{cep:"",street:"",number:"",complement:"",district:"",city:"",state:"SP"}}),[q,G]=(0,a.useState)(!1),[J,H]=(0,a.useState)(""),[V,W]=(0,a.useState)(""),[K,X]=(0,a.useState)(null),[Z,Q]=(0,a.useState)(""),[Y,ee]=(0,a.useState)(!1),[es,ea]=(0,a.useState)(!1),[et,er]=(0,a.useState)(""),ei=!!(T.name||T.email||T.cpf||T.phone);o=e.id,p=3===O?3:2===O?2:+!!ei,(0,a.useEffect)(()=>{let e=!1,s=!1,a=async()=>{if(!e&&!s&&"visible"===document.visibilityState){s=!0;try{await fetch("/api/tracking/presence",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({product_id:o,visit:l(o).visit,stage:p}),signal:AbortSignal.timeout(8e3)})}catch{}finally{s=!1}}};a();let t=setInterval(()=>void a(),2e4);return document.addEventListener("visibilitychange",a),()=>{e=!0,clearInterval(t),document.removeEventListener("visibilitychange",a)}},[o,p]),(0,a.useEffect)(()=>{let e=T.address.cep.replace(/\D/g,"");if(8!==e.length||2!==O||es)return void I("");let s=new AbortController,a=P.current,t=setTimeout(async()=>{I("Buscando endereço…");try{let t=await fetch("/api/cep/"+e,{signal:s.signal}),r=await t.json();if(!t.ok)throw Error(r.error||"Preencha o endereço manualmente.");if(s.signal.aborted)return;a===P.current?(B(s=>s.address.cep.replace(/\D/g,"")===e?{...s,address:{...s.address,...r}}:s),I("Endereço encontrado. Confira e informe o número.")):I("Confira o endereço informado.")}catch(e){s.signal.aborted||I("Failed to fetch"===e.message?"Consulta indisponível. Preencha manualmente.":e.message)}},350);return()=>{clearTimeout(t),s.abort()}},[T.address.cep,O,es]),(0,a.useEffect)(()=>{try{let s=JSON.parse(sessionStorage.getItem("product-order:"+e.id)||"{}");er(s.attempt||crypto.randomUUID()),s.token&&(D.current=!0,W(s.token),U(3),ea(!0))}catch{er(crypto.randomUUID())}},[e.id]),(0,a.useEffect)(()=>{if(V)return(0,b.watchCheckout)(V,s=>{let a=k(e.id,V,s.status,D.current);if(D.current=!1,a){W(""),X(null),Q(""),ea(!1),U(1),er(crypto.randomUUID());return}X(s)},H)},[V,e.id]),(0,a.useEffect)(()=>{let e=e=>{e.persisted&&["PAID","EXPIRED","FAILED","REFUNDED","CHARGEBACK"].includes(K?.status)&&window.location.reload()};return window.addEventListener("pageshow",e),()=>window.removeEventListener("pageshow",e)},[K?.status]);let en=K?.pix?.copy_paste;async function eo(){if(q||V)return;G(!0),H(""),ea(!0);let s=et||crypto.randomUUID();er(s);try{sessionStorage.setItem("product-order:"+e.id,JSON.stringify({attempt:s}))}catch{}try{let a=await fetch("/api/products/"+e.id+"/order",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({attempt:s,recovery_consent:M,shipping_method:N?void 0:R,tracking:l(e.id),buyer:N?{...C?{name:T.name}:{},email:T.email,cpf:T.cpf.replace(/\D/g,""),phone:T.phone.replace(/\D/g,"")}:{...T,cpf:T.cpf.replace(/\D/g,""),phone:T.phone.replace(/\D/g,""),address:{...T.address,cep:T.address.cep.replace(/\D/g,"")}}})}),t=await a.json();if(!a.ok)throw t.error?.code==="buyer_name_required"&&(E(!0),ea(!1),U(1)),[422,503].includes(a.status)&&["validation_error","payments_disabled","encryption_unavailable","provider_not_configured"].includes(t.error?.code)&&ea(!1),Error(t.error?.message||"Não foi possível gerar o Pix. Tente novamente nesta página.");let r=new URL(t.checkout_url).pathname.split("/").pop();try{sessionStorage.setItem("product-order:"+e.id,JSON.stringify({attempt:s,token:r}))}catch{}k(e.id,r,t.status,!1),X(t),W(r)}catch(e){H(e.message)}finally{G(!1)}}(0,a.useEffect)(()=>{if(!en)return;let e=!1;return v.default.toDataURL(en,{width:280,margin:2}).then(s=>{e||Q(s)}).catch(()=>{e||Q("")}),()=>{e=!0}},[en]);let el=K?.status==="PAID",ed=["EXPIRED","FAILED","REFUNDED","CHARGEBACK"].includes(K?.status),ec=(e,a,t,r="text")=>(0,s.jsxs)("label",{className:`shop-field shop-field-${a}`,children:[e,(0,s.jsxs)("span",{className:"shop-input-wrap",children:["phone"===a&&(0,s.jsx)("span",{className:"shop-country-code","aria-hidden":"true",children:"+55"}),(0,s.jsx)("input",{required:!0,type:r,autoComplete:{name:"name",email:"email",cpf:"off",phone:"tel-national"}[a],maxLength:"name"===a?120:"email"===a?254:"cpf"===a?14:15,minLength:"name"===a?3:void 0,inputMode:"cpf"===a?"numeric":"phone"===a?"tel":void 0,value:T[a],placeholder:t,disabled:es,onChange:e=>{let s=e.target.value;B({...T,[a]:"cpf"===a?s.replace(/\D/g,"").slice(0,11).replace(/^(\d{3})(\d)/,"$1.$2").replace(/^(\d{3}\.\d{3})(\d)/,"$1.$2").replace(/(\d{3}\.\d{3}\.\d{3})(\d)/,"$1-$2"):"phone"===a?function(e){let s=e.replace(/\D/g,"").slice(0,11);if(s.length<=2)return s;let a=s.slice(2),t=a.length>8?5:4;return`(${s.slice(0,2)}) ${a.slice(0,t)}${a.length>t?"-"+a.slice(t):""}`}(s):s}),H("")},pattern:"cpf"===a?"[0-9.\\-]{11,14}":void 0})]})]}),eh=(e,a,t="",r=!0)=>(0,s.jsxs)("label",{className:"shop-field",children:[e,(0,s.jsx)("input",{required:r,maxLength:"cep"===a?9:180,value:T.address[a],placeholder:t,disabled:es,onChange:e=>{["street","district","city","state"].includes(a)&&P.current++,B({...T,address:{...T.address,[a]:"cep"===a?e.target.value.replace(/\D/g,"").slice(0,8).replace(/^(\d{5})(\d)/,"$1-$2"):e.target.value}})}})]});return V?(0,s.jsx)(r.default,{tx:K,qr:Z,error:J}):(0,s.jsxs)("main",{className:"shop-page","data-step":O,children:[(0,s.jsxs)("header",{className:"shop-header",children:[(0,s.jsx)("img",{className:"shop-brand-image",src:"/checkout-brand/mercado-livre.png",alt:"Mercado Livre",width:922,height:235}),(0,s.jsxs)("div",{className:"shop-secure",children:[(0,s.jsx)(c.LockKeyhole,{size:22}),(0,s.jsxs)("span",{children:["PAGAMENTO",(0,s.jsx)("br",{}),(0,s.jsx)("strong",{children:"100% SEGURO"})]})]})]}),(0,s.jsxs)("div",{className:"shop-grid",children:[(0,s.jsx)("nav",{className:"shop-progress","aria-label":"Etapas do pedido",children:S.map(e=>{let a=[h.UserRound,x,u][e-1];return(0,s.jsxs)("button",{type:"button","aria-current":O===e?"step":void 0,disabled:es||O<e,className:O>=e?"is-complete":"",onClick:()=>{H(""),U(e)},children:[(0,s.jsx)("span",{children:(0,s.jsx)(a,{size:18})}),["Identificação","Entrega","Pagamento"][e-1]]},e)})}),(0,s.jsxs)("div",{className:"shop-details",children:[(0,s.jsxs)("section",{className:"shop-card shop-identification "+(1!==O?"shop-collapsed":""),children:[(0,s.jsxs)("div",{className:"shop-heading",children:[(0,s.jsxs)("h2",{children:[(0,s.jsx)("b",{children:O>1?(0,s.jsx)(g.Check,{size:13}):1}),"Identificação"]}),(0,s.jsxs)("small",{children:["1 de ",S.length]})]}),1===O?(0,s.jsxs)(s.Fragment,{children:[(0,s.jsx)("p",{children:N?"Preencha seus dados para continuar.":"Preencha seus dados para envio do pedido."}),(0,s.jsxs)("form",{onSubmit:e=>{(e.preventDefault(),!function(e){if(!/^\d{11}$/.test(e)||/^(\d)\1{10}$/.test(e))return!1;for(let s of[9,10]){let a=0;for(let t=0;t<s;t++)a+=Number(e[t])*(s+1-t);if(10*a%11%10!==Number(e[s]))return!1}return!0}(T.cpf.replace(/\D/g,"")))?H("Informe um CPF válido."):[10,11].includes(T.phone.replace(/\D/g,"").length)?(H(""),U(N?3:2),document.querySelector(".shop-progress")?.scrollIntoView({block:"start"})):H("Informe o telefone com DDD e 10 ou 11 dígitos.")},children:[C&&ec("Nome completo","name","Digite seu nome completo"),ec("E-mail","email","Digite seu e-mail","email"),ec("CPF","cpf","000.000.000-00"),(0,s.jsx)("div",{className:"shop-phone",children:ec("Celular/Whatsapp","phone","(00) 00000-0000","tel")}),e.recovery_enabled&&(0,s.jsxs)("label",{style:{display:"flex",gap:10,alignItems:"flex-start",margin:"16px 0",fontSize:13,lineHeight:1.5},children:[(0,s.jsx)("input",{type:"checkbox",checked:M,onChange:e=>F(e.target.checked),style:{width:18,height:18,minHeight:18,flexShrink:0,marginTop:2}}),(0,s.jsxs)("span",{children:[t.recoveryConsent," ",(0,s.jsx)("small",{children:"(Opcional)"})]})]}),(0,s.jsx)("button",{className:"shop-button",type:"submit",children:N?"Ir Para Pagamento":"Ir Para Entrega"}),J&&(0,s.jsx)("div",{className:"shop-error",role:"alert",children:J})]})]}):(0,s.jsxs)(s.Fragment,{children:[(0,s.jsxs)("p",{children:[T.name||"Identificação concluída",T.email?" · "+T.email:""]}),!es&&(0,s.jsx)("button",{className:"shop-edit",onClick:()=>U(1),children:"Editar dados"})]})]}),!N&&(0,s.jsxs)("section",{className:"shop-card shop-delivery "+(O<2?"shop-inactive":""),children:[(0,s.jsxs)("div",{className:"shop-heading",children:[(0,s.jsxs)("h2",{children:[(0,s.jsx)("b",{children:O>2?(0,s.jsx)(g.Check,{size:13}):2}),"Entrega"]}),(0,s.jsx)("small",{children:"2 de 3"})]}),2===O?(0,s.jsxs)(s.Fragment,{children:[(0,s.jsx)("p",{children:"Informe o endereço de entrega"}),(0,s.jsxs)("form",{onSubmit:e=>{e.preventDefault(),8!==T.address.cep.replace(/\D/g,"").length?H("Confira o CEP."):(H(""),U(3),document.querySelector(".shop-progress")?.scrollIntoView({block:"start"}))},children:[eh("CEP","cep","00000-000"),A&&(0,s.jsx)("small",{className:"shop-cep-status",role:"status",children:A}),eh("Endereço","street","Rua, avenida…"),(0,s.jsxs)("div",{className:"shop-two shop-street-row",children:[eh("N°","number","Número"),eh("Bairro","district")]}),eh("Complemento (Opcional)","complement","",!1),eh("Cidade","city"),(0,s.jsxs)("label",{className:"shop-field",children:["Estado",(0,s.jsx)("select",{value:T.address.state,onChange:e=>{P.current++,B({...T,address:{...T.address,state:e.target.value}})},children:"AC AL AP AM BA CE DF ES GO MA MT MS MG PA PB PR PE PI RJ RN RS RO RR SC SP SE TO".split(" ").map(e=>(0,s.jsx)("option",{children:e},e))})]}),(0,s.jsxs)("fieldset",{className:"shop-shipping-options",children:[(0,s.jsx)("legend",{children:"Escolha o frete:"}),n.map(e=>(0,s.jsxs)("label",{className:"shop-shipping-option","data-selected":R===e.id,children:[(0,s.jsx)("input",{type:"radio",name:"shipping",value:e.id,checked:R===e.id,disabled:es,onChange:()=>L(e.id)}),(0,s.jsxs)("span",{children:[(0,s.jsx)("strong",{children:e.name}),(0,s.jsxs)("small",{children:[e.days,"full"===e.id&&(0,s.jsx)("b",{className:"shop-full",children:"ϟ FULL"})]})]}),(0,s.jsx)("strong",{children:e.amount?w(e.amount):"Grátis"})]},e.id))]}),(0,s.jsx)("button",{className:"shop-button",children:"Ir Para Pagamento"}),J&&(0,s.jsx)("div",{className:"shop-error",role:"alert",children:J})]})]}):(0,s.jsxs)(s.Fragment,{children:[(0,s.jsx)("p",{children:O<2?"Preencha seus dados para continuar":T.address.street?`${T.address.street}, ${T.address.number} \xb7 ${T.address.city}/${T.address.state}`:"Entrega informada no pedido"}),O>2&&!es&&(0,s.jsx)("button",{className:"shop-edit",onClick:()=>U(2),children:"Editar entrega"})]})]})]}),(0,s.jsxs)("section",{className:"shop-card shop-payment "+(O<3?"shop-inactive":""),children:[(0,s.jsxs)("div",{className:"shop-heading",children:[(0,s.jsxs)("h2",{children:[(0,s.jsx)("b",{children:el?(0,s.jsx)(g.Check,{size:13}):S.length}),"Pagamento"]}),(0,s.jsxs)("small",{children:[S.length," de ",S.length]})]}),O<3?(0,s.jsx)("p",{children:N?"Preencha seus dados para continuar":"Preencha os dados de entrega para continuar"}):el?(0,s.jsxs)("div",{className:"shop-paid",children:[(0,s.jsx)(f,{size:48}),(0,s.jsx)("h3",{children:"Pagamento confirmado!"}),(0,s.jsx)("p",{children:"Seu pedido foi recebido. Guarde o número abaixo para acompanhar com a loja."}),(0,s.jsx)("code",{children:K.id})]}):ed?(0,s.jsxs)("div",{children:[(0,s.jsx)("h3",{children:"Cobrança encerrada"}),(0,s.jsx)("p",{children:"Este Pix não está disponível para pagamento. Entre em contato com a loja antes de fazer outro pedido."})]}):(0,s.jsxs)(s.Fragment,{children:[(0,s.jsx)("p",{children:"Todas as transações são seguras e criptografadas."}),(0,s.jsxs)("div",{className:"shop-pix-panel",children:[(0,s.jsxs)("div",{className:"shop-pix-choice",children:[(0,s.jsx)("span",{className:"shop-radio"}),(0,s.jsx)("img",{src:"/checkout-brand/pix-mark.svg",width:36,height:36,alt:"Pix"}),(0,s.jsx)("strong",{children:"PIX"})]}),V?(0,s.jsxs)("div",{className:"shop-pix",children:[Z?(0,s.jsxs)(s.Fragment,{children:[(0,s.jsx)("h3",{children:"Escaneie para pagar"}),(0,s.jsx)("img",{src:Z,width:250,height:250,alt:"QR Code Pix do pedido"}),(0,s.jsx)("strong",{className:"shop-total-pix",children:w(K?.amount_cents||e.amount+_)}),(0,s.jsx)("p",{children:"Abra o app do banco e escaneie o código ou use Pix copia e cola."}),(0,s.jsxs)("button",{className:"shop-button",onClick:async()=>{try{await navigator.clipboard.writeText(K.pix.copy_paste),ee(!0)}catch{H("Não foi possível copiar. Selecione o código abaixo.")}},children:[(0,s.jsx)(j.Copy,{size:16}),Y?"Código copiado":"Copiar código Pix"]}),(0,s.jsx)("textarea",{"aria-label":"Código Pix copia e cola",readOnly:!0,value:K.pix.copy_paste}),(0,s.jsx)("small",{children:K.pix.expires_at?"Válido até "+new Date(K.pix.expires_at).toLocaleString("pt-BR"):""}),(0,s.jsxs)("p",{className:"shop-wait",children:[(0,s.jsx)(y.default,{size:15}),"Aguardando pagamento"]})]}):(0,s.jsxs)("p",{className:"shop-wait",children:[(0,s.jsx)(y.default,{}),"Gerando seu Pix…"]}),(0,s.jsx)("a",{className:"shop-edit",href:"/checkout/"+V,children:"Abrir link deste pagamento"})]}):(0,s.jsxs)(s.Fragment,{children:[(0,s.jsx)("p",{className:"shop-payment-note",children:"O prazo para pagar será exibido junto ao código Pix."}),(0,s.jsxs)("p",{className:"shop-payment-note",children:["Valor no Pix: ",(0,s.jsx)("strong",{children:w(e.amount+_)})]}),(0,s.jsx)("button",{className:"shop-button",disabled:q,"aria-busy":q,onClick:()=>void eo(),children:q?(0,s.jsxs)(s.Fragment,{children:[(0,s.jsx)(y.default,{size:18,className:"shop-spinner","aria-hidden":"true"}),"Gerando Pix…"]}):es?"Tentar novamente o mesmo pedido":"Finalizar Compra"})]})]})]}),3===O&&J&&(0,s.jsx)("div",{className:"shop-error",role:"alert",children:J})]}),(0,s.jsxs)("aside",{className:"shop-summary",children:[(0,s.jsxs)("section",{className:"shop-card shop-order-summary","data-expanded":$,children:[(0,s.jsxs)("button",{className:"shop-summary-toggle",type:"button","aria-expanded":$,"aria-controls":"shop-summary-content",onClick:()=>z(!$),children:[(0,s.jsx)("span",{children:"Resumo do pedido"}),(0,s.jsx)("strong",{children:w(K?.amount_cents??e.amount+_)}),(0,s.jsx)(m,{size:16})]}),(0,s.jsxs)("div",{className:"shop-summary-content",id:"shop-summary-content",children:[(0,s.jsxs)("dl",{children:[(0,s.jsxs)("div",{children:[(0,s.jsx)("dt",{children:"Produtos (1)"}),(0,s.jsx)("dd",{children:w(K?.product?.amount??e.amount)})]}),!N&&(0,s.jsxs)("div",{className:"shop-delivery-total "+(K?.product?.shipping??_?"":"shop-free-delivery"),children:[(0,s.jsx)("dt",{children:"Entrega"}),(0,s.jsx)("dd",{children:K?.product?.shipping??_?w(K?.product?.shipping??_):"Grátis"})]}),(0,s.jsxs)("div",{className:"shop-total",children:[(0,s.jsx)("dt",{children:"Total"}),(0,s.jsx)("dd",{children:w(K?.amount_cents??e.amount+_)})]})]}),(0,s.jsxs)("div",{className:"shop-product",children:[(0,s.jsx)("img",{src:e.image_url,alt:e.name}),(0,s.jsxs)("div",{children:[(0,s.jsx)("strong",{children:K?.product?.name??e.name}),(0,s.jsx)("small",{children:"Quantidade: 1"})]}),(0,s.jsx)("span",{children:w(K?.product?.amount??e.amount)})]})]})]}),!!e.reviews?.length&&(0,s.jsx)("div",{className:"shop-desktop-reviews",children:(0,s.jsx)(i,{reviews:e.reviews})}),e.description&&(0,s.jsxs)("section",{className:"shop-card shop-product-description",children:[(0,s.jsx)("h2",{children:"Sobre o produto"}),(0,s.jsx)("p",{className:"shop-description",children:e.description})]})]}),!!e.reviews?.length&&(0,s.jsx)("div",{className:"shop-mobile-reviews",children:(0,s.jsx)(i,{reviews:e.reviews})})]}),(0,s.jsxs)("footer",{className:"shop-footer",children:[(0,s.jsx)("span",{children:"Formas de pagamento:"}),(0,s.jsx)("div",{className:"shop-payment-brands","aria-label":"Bandeiras da loja",children:["aura","discover","mastercard","diners","visa","amex","pix","elo"].map(e=>(0,s.jsx)("img",{src:`/checkout-brand/${e}.svg`,width:38,height:25,alt:e},e))}),(0,s.jsx)("small",{children:"Disponível neste checkout: Pix"}),(0,s.jsx)("small",{children:"Todos os direitos reservados"})]})]})}],70896)},94492,65649,e=>{"use strict";e.s(["recoveryConsent",0,"Quero receber um lembrete e ajuda pelo WhatsApp se não concluir o pagamento deste pedido.","recoveryMessage",0,"Sou a Juliana aqui do suporte ao cliente. Eu vi que você gerou o pedido do Kit Panelas da promoção, mas acabou não finalizando o pagamento!\n\nGostaria de saber se ficou com alguma dúvida e como posso te ajudar na finalização?"],94492);let s=(0,e.i(56420).default)("user-round",[["circle",{cx:"12",cy:"8",r:"5",key:"1hypcn"}],["path",{d:"M20 21a8 8 0 0 0-16 0",key:"rfgkzh"}]]);e.s(["UserRound",0,s],65649)},89664,e=>{"use strict";let s=(0,e.i(56420).default)("check",[["path",{d:"M20 6 9 17l-5-5",key:"1gmf2c"}]]);e.s(["Check",0,s],89664)},8734,56420,16933,51757,43420,e=>{"use strict";var s=e.i(71645),a=e.i(96661);let t=e=>{let s=e.replace(/^([A-Z])|[\s-_]+(\w)/g,(e,s,a)=>a?a.toUpperCase():s.toLowerCase());return s.charAt(0).toUpperCase()+s.slice(1)};var r=e.i(5014);let i=(e,i)=>{let n=(0,s.forwardRef)(({className:n,...o},l)=>(0,s.createElement)(r.default,{ref:l,iconNode:i,className:(0,a.mergeClasses)(`lucide-${t(e).replace(/([a-z0-9])([A-Z])/g,"$1-$2").toLowerCase()}`,`lucide-${e}`,n),...o}));return n.displayName=t(e),n};e.s(["default",0,i],56420);let n=i("copy",[["rect",{width:"14",height:"14",x:"8",y:"8",rx:"2",ry:"2",key:"17jyea"}],["path",{d:"M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2",key:"zix9uf"}]]);e.s(["Copy",0,n],8734);let o=i("circle-check",[["circle",{cx:"12",cy:"12",r:"10",key:"1mglay"}],["path",{d:"m9 12 2 2 4-4",key:"dzmm74"}]]);e.s(["default",0,o],16933),e.s(["CheckCircle2",0,o],51757);let l=i("info",[["circle",{cx:"12",cy:"12",r:"10",key:"1mglay"}],["path",{d:"M12 16v-4",key:"1dtifu"}],["path",{d:"M12 8h.01",key:"e9boi3"}]]);e.s(["default",0,l],43420)},58379,e=>{"use strict";let s=(0,e.i(56420).default)("loader-circle",[["path",{d:"M21 12a9 9 0 1 1-6.219-8.56",key:"13zald"}]]);e.s(["default",0,s])},96661,5014,e=>{"use strict";let s=(...e)=>e.filter((e,s,a)=>!!e&&""!==e.trim()&&a.indexOf(e)===s).join(" ").trim();e.s(["mergeClasses",0,s],96661);var a=e.i(71645),t={xmlns:"http://www.w3.org/2000/svg",width:24,height:24,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:2,strokeLinecap:"round",strokeLinejoin:"round"};let r=(0,a.createContext)({}),i=(0,a.forwardRef)(({color:e,size:i,strokeWidth:n,absoluteStrokeWidth:o,className:l="",children:d,iconNode:c,...h},p)=>{let{size:u=24,strokeWidth:m=2,absoluteStrokeWidth:x=!1,color:g="currentColor",className:j=""}=(0,a.useContext)(r)??{},f=o??x?24*Number(n??m)/Number(i??u):n??m;return(0,a.createElement)("svg",{ref:p,...t,width:i??u??t.width,height:i??u??t.height,stroke:e??g,strokeWidth:f,className:s("lucide",j,l),...!d&&!(e=>{for(let s in e)if(s.startsWith("aria-")||"role"===s||"title"===s)return!0;return!1})(h)&&{"aria-hidden":"true"},...h},[...c.map(([e,s])=>(0,a.createElement)(e,s)),...Array.isArray(d)?d:[d]])});e.s(["default",0,i],5014)}]);
+(globalThis.TURBOPACK || (globalThis.TURBOPACK = [])).push(["object" == typeof document ? document.currentScript : void 0, 70896, e => {
+    "use strict";
+    var s = e.i(43476)
+      , a = e.i(71645)
+      , t = e.i(94492)
+      , r = e.i(98330);
+    function i({reviews: e}) {
+        let t = (0,
+        a.useRef)(null)
+          , [r,n] = (0,
+        a.useState)(0);
+        return e.length ? (0,
+        s.jsxs)("section", {
+            className: "shop-reviews",
+            "aria-label": "Avaliações do produto",
+            children: [(0,
+            s.jsx)("div", {
+                className: "shop-review-track",
+                ref: t,
+                onScroll: () => {
+                    let s = t.current;
+                    if (!s || s.children.length < 2)
+                        return;
+                    let a = s.children[0]
+                      , r = s.children[1].offsetLeft - a.offsetLeft;
+                    r > 0 && n(Math.max(0, Math.min(e.length - 1, Math.round(s.scrollLeft / r))))
+                }
+                ,
+                children: e.map(e => (0,
+                s.jsxs)("article", {
+                    className: "shop-review",
+                    children: [e.photo && (0,
+                    s.jsx)("img", {
+                        src: e.photo,
+                        width: 36,
+                        height: 36,
+                        alt: e.name,
+                        loading: "lazy"
+                    }), (0,
+                    s.jsxs)("div", {
+                        className: "shop-stars",
+                        "aria-label": `${e.rating} de 5 estrelas`,
+                        children: ["★".repeat(e.rating), "☆".repeat(5 - e.rating)]
+                    }), (0,
+                    s.jsx)("strong", {
+                        children: e.name
+                    }), (0,
+                    s.jsx)("p", {
+                        children: e.text
+                    })]
+                }, e.id))
+            }), e.length > 1 && (0,
+            s.jsx)("div", {
+                className: "shop-review-dots",
+                "aria-label": "Navegar pelas avaliações",
+                children: e.map( (e, a) => (0,
+                s.jsx)("button", {
+                    type: "button",
+                    "aria-label": `Avalia\xe7\xe3o ${a + 1}`,
+                    "aria-current": r === a ? "true" : void 0,
+                    onClick: () => {
+                        let e = t.current;
+                        if (!e)
+                            return;
+                        let s = e.children[a]
+                          , r = e.children[0];
+                        e.scrollTo({
+                            left: s.offsetLeft - r.offsetLeft,
+                            behavior: "smooth"
+                        })
+                    }
+                }, e.id))
+            })]
+        }) : null
+    }
+    let n = [{
+        id: "flex",
+        name: "Mercado Envios (Flex)",
+        days: "3 a 5 dias",
+        amount: 0
+    }, {
+        id: "full",
+        name: "Mercado Envios (Full)",
+        days: "1 a 2 dias",
+        amount: 998
+    }]
+      , o = new Map;
+    function l(e) {
+        let s = o.get(e);
+        if (!s) {
+            try {
+                let a = JSON.parse(sessionStorage.getItem("tiktok:" + e) || "null");
+                a && /^[a-f0-9-]{36}$/i.test(a.visit) && (s = a)
+            } catch {}
+            s ||= {
+                visit: crypto.randomUUID()
+            }
+        }
+        let a = new URL(location.href).searchParams.get("ttclid");
+        a && /^[A-Za-z0-9_.~-]{1,500}$/.test(a) && (s.ttclid = a);
+        let t = document.cookie.split("; ").find(e => e.startsWith("_ttp="))?.slice(5);
+        t && /^[A-Za-z0-9_.~-]{1,250}$/.test(t) && (s.ttp = t),
+        o.set(e, s);
+        try {
+            sessionStorage.setItem("tiktok:" + e, JSON.stringify(s))
+        } catch {}
+        return s
+    }
+    async function d(e) {
+        try {
+            await fetch("/api/tracking/start", {
+                method: "POST",
+                keepalive: !0,
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    product_id: e,
+                    tracking: l(e)
+                })
+            })
+        } catch {}
+    }
+    var c = e.i(72764)
+      , h = e.i(65649)
+      , p = e.i(56420);
+    let u = (0,
+    p.default)("credit-card", [["rect", {
+        width: "20",
+        height: "14",
+        x: "2",
+        y: "5",
+        rx: "2",
+        key: "ynyp8z"
+    }], ["line", {
+        x1: "2",
+        x2: "22",
+        y1: "10",
+        y2: "10",
+        key: "1b3vmo"
+    }]])
+      , m = (0,
+    p.default)("chevron-up", [["path", {
+        d: "m18 15-6-6-6 6",
+        key: "153udz"
+    }]])
+      , x = (0,
+    p.default)("truck", [["path", {
+        d: "M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2",
+        key: "wrbu53"
+    }], ["path", {
+        d: "M15 18H9",
+        key: "1lyqi6"
+    }], ["path", {
+        d: "M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14",
+        key: "lysw3i"
+    }], ["circle", {
+        cx: "17",
+        cy: "18",
+        r: "2",
+        key: "332jqn"
+    }], ["circle", {
+        cx: "7",
+        cy: "18",
+        r: "2",
+        key: "19iecd"
+    }]]);
+    var g = e.i(89664)
+      , j = e.i(8734);
+    let f = (0,
+    p.default)("package-check", [["path", {
+        d: "M12 22V12",
+        key: "d0xqtd"
+    }], ["path", {
+        d: "m16 17 2 2 4-4",
+        key: "uh5qu3"
+    }], ["path", {
+        d: "M21 11.127V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.729l7 4a2 2 0 0 0 2 .001l1.32-.753",
+        key: "kpkbpo"
+    }], ["path", {
+        d: "M3.29 7 12 12l8.71-5",
+        key: "19ckod"
+    }], ["path", {
+        d: "m7.5 4.27 8.997 5.148",
+        key: "9yrvtv"
+    }]]);
+    var y = e.i(58379)
+      , y = y
+      , v = e.i(73134)
+      , b = e.i(1307);
+    let N = new Set(["PAID", "EXPIRED", "FAILED", "REFUNDED", "CHARGEBACK"]);
+    function k(e, s, a, t) {
+        if (!N.has(a))
+            return !1;
+        try {
+            let a = "product-order:" + e;
+            JSON.parse(sessionStorage.getItem(a) || "{}").token === s && sessionStorage.removeItem(a)
+        } catch {}
+        return t
+    }
+    let w = e => new Intl.NumberFormat("pt-BR",{
+        style: "currency",
+        currency: "BRL"
+    }).format(e / 100);
+    e.s(["default", 0, function({product: e}) {
+        var o, p;
+        (0,
+        a.useEffect)( () => {
+            d(e.id)
+        }
+        , [e.id]);
+        let N = "digital" === e.product_type
+          , [C,E] = (0,
+        a.useState)(!N || !!e.requires_buyer_name)
+          , S = N ? [1, 3] : [1, 2, 3]
+          , P = (0,
+        a.useRef)(0)
+          , D = (0,
+        a.useRef)(!1)
+          , [A,I] = (0,
+        a.useState)("")
+          , [R,L] = (0,
+        a.useState)("flex")
+          , _ = N ? 0 : n.find(e => e.id === R).amount
+          , [$,z] = (0,
+        a.useState)(!0)
+          , [M,F] = (0,
+        a.useState)(!1)
+          , [O,U] = (0,
+        a.useState)(1)
+          , [T,B] = (0,
+        a.useState)({
+            name: "",
+            email: "",
+            cpf: "",
+            phone: "",
+            address: {
+                cep: "",
+                street: "",
+                number: "",
+                complement: "",
+                district: "",
+                city: "",
+                state: "SP"
+            }
+        })
+          , [q,G] = (0,
+        a.useState)(!1)
+          , [J,H] = (0,
+        a.useState)("")
+          , [V,W] = (0,
+        a.useState)("")
+          , [K,X] = (0,
+        a.useState)(null)
+          , [Z,Q] = (0,
+        a.useState)("")
+          , [Y,ee] = (0,
+        a.useState)(!1)
+          , [es,ea] = (0,
+        a.useState)(!1)
+          , [et,er] = (0,
+        a.useState)("")
+          , ei = !!(T.name || T.email || T.cpf || T.phone);
+        o = e.id,
+        p = 3 === O ? 3 : 2 === O ? 2 : +!!ei,
+        (0,
+        a.useEffect)( () => {
+            let e = !1
+              , s = !1
+              , a = async () => {
+                if (!e && !s && "visible" === document.visibilityState) {
+                    s = !0;
+                    try {
+                        await fetch("/api/tracking/presence", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({
+                                product_id: o,
+                                visit: l(o).visit,
+                                stage: p
+                            }),
+                            signal: AbortSignal.timeout(8e3)
+                        })
+                    } catch {} finally {
+                        s = !1
+                    }
+                }
+            }
+            ;
+            a();
+            let t = setInterval( () => void a(), 2e4);
+            return document.addEventListener("visibilitychange", a),
+            () => {
+                e = !0,
+                clearInterval(t),
+                document.removeEventListener("visibilitychange", a)
+            }
+        }
+        , [o, p]),
+        (0,
+        a.useEffect)( () => {
+            let e = T.address.cep.replace(/\D/g, "");
+            if (8 !== e.length || 2 !== O || es)
+                return void I("");
+            let s = new AbortController
+              , a = P.current
+              , t = setTimeout(async () => {
+                I("Buscando endereço…");
+                try {
+                    let t = await fetch("/api/cep/" + e, {
+                        signal: s.signal
+                    })
+                      , r = await t.json();
+                    if (!t.ok)
+                        throw Error(r.error || "Preencha o endereço manualmente.");
+                    if (s.signal.aborted)
+                        return;
+                    a === P.current ? (B(s => s.address.cep.replace(/\D/g, "") === e ? {
+                        ...s,
+                        address: {
+                            ...s.address,
+                            ...r
+                        }
+                    } : s),
+                    I("Endereço encontrado. Confira e informe o número.")) : I("Confira o endereço informado.")
+                } catch (e) {
+                    s.signal.aborted || I("Failed to fetch" === e.message ? "Consulta indisponível. Preencha manualmente." : e.message)
+                }
+            }
+            , 350);
+            return () => {
+                clearTimeout(t),
+                s.abort()
+            }
+        }
+        , [T.address.cep, O, es]),
+        (0,
+        a.useEffect)( () => {
+            try {
+                let s = JSON.parse(sessionStorage.getItem("product-order:" + e.id) || "{}");
+                er(s.attempt || crypto.randomUUID()),
+                s.token && (D.current = !0,
+                W(s.token),
+                U(3),
+                ea(!0))
+            } catch {
+                er(crypto.randomUUID())
+            }
+        }
+        , [e.id]),
+        (0,
+        a.useEffect)( () => {
+            if (V)
+                return (0,
+                b.watchCheckout)(V, s => {
+                    let a = k(e.id, V, s.status, D.current);
+                    if (D.current = !1,
+                    a) {
+                        W(""),
+                        X(null),
+                        Q(""),
+                        ea(!1),
+                        U(1),
+                        er(crypto.randomUUID());
+                        return
+                    }
+                    X(s)
+                }
+                , H)
+        }
+        , [V, e.id]),
+        (0,
+        a.useEffect)( () => {
+            let e = e => {
+                e.persisted && ["PAID", "EXPIRED", "FAILED", "REFUNDED", "CHARGEBACK"].includes(K?.status) && window.location.reload()
+            }
+            ;
+            return window.addEventListener("pageshow", e),
+            () => window.removeEventListener("pageshow", e)
+        }
+        , [K?.status]);
+        let en = K?.pix?.copy_paste;
+        async function eo() {
+            if (q || V)
+                return;
+            G(!0),
+            H(""),
+            ea(!0);
+            let s = et || crypto.randomUUID();
+            er(s);
+            try {
+                sessionStorage.setItem("product-order:" + e.id, JSON.stringify({
+                    attempt: s
+                }))
+            } catch {}
+            try {
+                let a = await fetch("/api/products/" + e.id + "/order", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        attempt: s,
+                        recovery_consent: M,
+                        shipping_method: N ? void 0 : R,
+                        tracking: l(e.id),
+                        buyer: N ? {
+                            ...C ? {
+                                name: T.name
+                            } : {},
+                            email: T.email,
+                            cpf: T.cpf.replace(/\D/g, ""),
+                            phone: T.phone.replace(/\D/g, "")
+                        } : {
+                            ...T,
+                            cpf: T.cpf.replace(/\D/g, ""),
+                            phone: T.phone.replace(/\D/g, ""),
+                            address: {
+                                ...T.address,
+                                cep: T.address.cep.replace(/\D/g, "")
+                            }
+                        }
+                    })
+                })
+                  , t = await a.json();
+                if (!a.ok)
+                    throw t.error?.code === "buyer_name_required" && (E(!0),
+                    ea(!1),
+                    U(1)),
+                    [422, 503].includes(a.status) && ["validation_error", "payments_disabled", "encryption_unavailable", "provider_not_configured"].includes(t.error?.code) && ea(!1),
+                    Error(t.error?.message || "Não foi possível gerar o Pix. Tente novamente nesta página.");
+                let r = new URL(t.checkout_url).pathname.split("/").pop();
+                try {
+                    sessionStorage.setItem("product-order:" + e.id, JSON.stringify({
+                        attempt: s,
+                        token: r
+                    }))
+                } catch {}
+                k(e.id, r, t.status, !1),
+                X(t),
+                W(r)
+            } catch (e) {
+                H(e.message)
+            } finally {
+                G(!1)
+            }
+        }
+        (0,
+        a.useEffect)( () => {
+            if (!en)
+                return;
+            let e = !1;
+            return v.default.toDataURL(en, {
+                width: 280,
+                margin: 2
+            }).then(s => {
+                e || Q(s)
+            }
+            ).catch( () => {
+                e || Q("")
+            }
+            ),
+            () => {
+                e = !0
+            }
+        }
+        , [en]);
+        let el = K?.status === "PAID"
+          , ed = ["EXPIRED", "FAILED", "REFUNDED", "CHARGEBACK"].includes(K?.status)
+          , ec = (e, a, t, r="text") => (0,
+        s.jsxs)("label", {
+            className: `shop-field shop-field-${a}`,
+            children: [e, (0,
+            s.jsxs)("span", {
+                className: "shop-input-wrap",
+                children: ["phone" === a && (0,
+                s.jsx)("span", {
+                    className: "shop-country-code",
+                    "aria-hidden": "true",
+                    children: "+55"
+                }), (0,
+                s.jsx)("input", {
+                    required: !0,
+                    type: r,
+                    autoComplete: {
+                        name: "name",
+                        email: "email",
+                        cpf: "off",
+                        phone: "tel-national"
+                    }[a],
+                    maxLength: "name" === a ? 120 : "email" === a ? 254 : "cpf" === a ? 14 : 15,
+                    minLength: "name" === a ? 3 : void 0,
+                    inputMode: "cpf" === a ? "numeric" : "phone" === a ? "tel" : void 0,
+                    value: T[a],
+                    placeholder: t,
+                    disabled: es,
+                    onChange: e => {
+                        let s = e.target.value;
+                        B({
+                            ...T,
+                            [a]: "cpf" === a ? s.replace(/\D/g, "").slice(0, 11).replace(/^(\d{3})(\d)/, "$1.$2").replace(/^(\d{3}\.\d{3})(\d)/, "$1.$2").replace(/(\d{3}\.\d{3}\.\d{3})(\d)/, "$1-$2") : "phone" === a ? function(e) {
+                                let s = e.replace(/\D/g, "").slice(0, 11);
+                                if (s.length <= 2)
+                                    return s;
+                                let a = s.slice(2)
+                                  , t = a.length > 8 ? 5 : 4;
+                                return `(${s.slice(0, 2)}) ${a.slice(0, t)}${a.length > t ? "-" + a.slice(t) : ""}`
+                            }(s) : s
+                        }),
+                        H("")
+                    }
+                    ,
+                    pattern: "cpf" === a ? "[0-9.\\-]{11,14}" : void 0
+                })]
+            })]
+        })
+          , eh = (e, a, t="", r=!0) => (0,
+        s.jsxs)("label", {
+            className: "shop-field",
+            children: [e, (0,
+            s.jsx)("input", {
+                required: r,
+                maxLength: "cep" === a ? 9 : 180,
+                value: T.address[a],
+                placeholder: t,
+                disabled: es,
+                onChange: e => {
+                    ["street", "district", "city", "state"].includes(a) && P.current++,
+                    B({
+                        ...T,
+                        address: {
+                            ...T.address,
+                            [a]: "cep" === a ? e.target.value.replace(/\D/g, "").slice(0, 8).replace(/^(\d{5})(\d)/, "$1-$2") : e.target.value
+                        }
+                    })
+                }
+            })]
+        });
+        return V ? (0,
+        s.jsx)(r.default, {
+            tx: K,
+            qr: Z,
+            error: J
+        }) : (0,
+        s.jsxs)("main", {
+            className: "shop-page",
+            "data-step": O,
+            children: [(0,
+            s.jsxs)("header", {
+                className: "shop-header",
+                children: [(0,
+                s.jsx)("img", {
+                    className: "shop-brand-image",
+                    src: "/checkout-brand/mercado-livre.png",
+                    alt: "Mercado Livre",
+                    width: 922,
+                    height: 235
+                }), (0,
+                s.jsxs)("div", {
+                    className: "shop-secure",
+                    children: [(0,
+                    s.jsx)(c.LockKeyhole, {
+                        size: 22
+                    }), (0,
+                    s.jsxs)("span", {
+                        children: ["PAGAMENTO", (0,
+                        s.jsx)("br", {}), (0,
+                        s.jsx)("strong", {
+                            children: "100% SEGURO"
+                        })]
+                    })]
+                })]
+            }), (0,
+            s.jsxs)("div", {
+                className: "shop-grid",
+                children: [(0,
+                s.jsx)("nav", {
+                    className: "shop-progress",
+                    "aria-label": "Etapas do pedido",
+                    children: S.map(e => {
+                        let a = [h.UserRound, x, u][e - 1];
+                        return (0,
+                        s.jsxs)("button", {
+                            type: "button",
+                            "aria-current": O === e ? "step" : void 0,
+                            disabled: es || O < e,
+                            className: O >= e ? "is-complete" : "",
+                            onClick: () => {
+                                H(""),
+                                U(e)
+                            }
+                            ,
+                            children: [(0,
+                            s.jsx)("span", {
+                                children: (0,
+                                s.jsx)(a, {
+                                    size: 18
+                                })
+                            }), ["Identificação", "Entrega", "Pagamento"][e - 1]]
+                        }, e)
+                    }
+                    )
+                }), (0,
+                s.jsxs)("div", {
+                    className: "shop-details",
+                    children: [(0,
+                    s.jsxs)("section", {
+                        className: "shop-card shop-identification " + (1 !== O ? "shop-collapsed" : ""),
+                        children: [(0,
+                        s.jsxs)("div", {
+                            className: "shop-heading",
+                            children: [(0,
+                            s.jsxs)("h2", {
+                                children: [(0,
+                                s.jsx)("b", {
+                                    children: O > 1 ? (0,
+                                    s.jsx)(g.Check, {
+                                        size: 13
+                                    }) : 1
+                                }), "Identificação"]
+                            }), (0,
+                            s.jsxs)("small", {
+                                children: ["1 de ", S.length]
+                            })]
+                        }), 1 === O ? (0,
+                        s.jsxs)(s.Fragment, {
+                            children: [(0,
+                            s.jsx)("p", {
+                                children: N ? "Preencha seus dados para continuar." : "Preencha seus dados para envio do pedido."
+                            }), (0,
+                            s.jsxs)("form", {
+                                onSubmit: e => {
+                                    (e.preventDefault(),
+                                    !function(e) {
+                                        if (!/^\d{11}$/.test(e) || /^(\d)\1{10}$/.test(e))
+                                            return !1;
+                                        for (let s of [9, 10]) {
+                                            let a = 0;
+                                            for (let t = 0; t < s; t++)
+                                                a += Number(e[t]) * (s + 1 - t);
+                                            if (10 * a % 11 % 10 !== Number(e[s]))
+                                                return !1
+                                        }
+                                        return !0
+                                    }(T.cpf.replace(/\D/g, ""))) ? H("Informe um CPF válido.") : [10, 11].includes(T.phone.replace(/\D/g, "").length) ? (H(""),
+                                    U(N ? 3 : 2),
+                                    document.querySelector(".shop-progress")?.scrollIntoView({
+                                        block: "start"
+                                    })) : H("Informe o telefone com DDD e 10 ou 11 dígitos.")
+                                }
+                                ,
+                                children: [C && ec("Nome completo", "name", "Digite seu nome completo"), ec("E-mail", "email", "Digite seu e-mail", "email"), ec("CPF", "cpf", "000.000.000-00"), (0,
+                                s.jsx)("div", {
+                                    className: "shop-phone",
+                                    children: ec("Celular/Whatsapp", "phone", "(00) 00000-0000", "tel")
+                                }), e.recovery_enabled && (0,
+                                s.jsxs)("label", {
+                                    style: {
+                                        display: "flex",
+                                        gap: 10,
+                                        alignItems: "flex-start",
+                                        margin: "16px 0",
+                                        fontSize: 13,
+                                        lineHeight: 1.5
+                                    },
+                                    children: [(0,
+                                    s.jsx)("input", {
+                                        type: "checkbox",
+                                        checked: M,
+                                        onChange: e => F(e.target.checked),
+                                        style: {
+                                            width: 18,
+                                            height: 18,
+                                            minHeight: 18,
+                                            flexShrink: 0,
+                                            marginTop: 2
+                                        }
+                                    }), (0,
+                                    s.jsxs)("span", {
+                                        children: [t.recoveryConsent, " ", (0,
+                                        s.jsx)("small", {
+                                            children: "(Opcional)"
+                                        })]
+                                    })]
+                                }), (0,
+                                s.jsx)("button", {
+                                    className: "shop-button",
+                                    type: "submit",
+                                    children: N ? "Ir Para Pagamento" : "Ir Para Entrega"
+                                }), J && (0,
+                                s.jsx)("div", {
+                                    className: "shop-error",
+                                    role: "alert",
+                                    children: J
+                                })]
+                            })]
+                        }) : (0,
+                        s.jsxs)(s.Fragment, {
+                            children: [(0,
+                            s.jsxs)("p", {
+                                children: [T.name || "Identificação concluída", T.email ? " · " + T.email : ""]
+                            }), !es && (0,
+                            s.jsx)("button", {
+                                className: "shop-edit",
+                                onClick: () => U(1),
+                                children: "Editar dados"
+                            })]
+                        })]
+                    }), !N && (0,
+                    s.jsxs)("section", {
+                        className: "shop-card shop-delivery " + (O < 2 ? "shop-inactive" : ""),
+                        children: [(0,
+                        s.jsxs)("div", {
+                            className: "shop-heading",
+                            children: [(0,
+                            s.jsxs)("h2", {
+                                children: [(0,
+                                s.jsx)("b", {
+                                    children: O > 2 ? (0,
+                                    s.jsx)(g.Check, {
+                                        size: 13
+                                    }) : 2
+                                }), "Entrega"]
+                            }), (0,
+                            s.jsx)("small", {
+                                children: "2 de 3"
+                            })]
+                        }), 2 === O ? (0,
+                        s.jsxs)(s.Fragment, {
+                            children: [(0,
+                            s.jsx)("p", {
+                                children: "Informe o endereço de entrega"
+                            }), (0,
+                            s.jsxs)("form", {
+                                onSubmit: e => {
+                                    e.preventDefault(),
+                                    8 !== T.address.cep.replace(/\D/g, "").length ? H("Confira o CEP.") : (H(""),
+                                    U(3),
+                                    document.querySelector(".shop-progress")?.scrollIntoView({
+                                        block: "start"
+                                    }))
+                                }
+                                ,
+                                children: [eh("CEP", "cep", "00000-000"), A && (0,
+                                s.jsx)("small", {
+                                    className: "shop-cep-status",
+                                    role: "status",
+                                    children: A
+                                }), eh("Endereço", "street", "Rua, avenida…"), (0,
+                                s.jsxs)("div", {
+                                    className: "shop-two shop-street-row",
+                                    children: [eh("N°", "number", "Número"), eh("Bairro", "district")]
+                                }), eh("Complemento (Opcional)", "complement", "", !1), eh("Cidade", "city"), (0,
+                                s.jsxs)("label", {
+                                    className: "shop-field",
+                                    children: ["Estado", (0,
+                                    s.jsx)("select", {
+                                        value: T.address.state,
+                                        onChange: e => {
+                                            P.current++,
+                                            B({
+                                                ...T,
+                                                address: {
+                                                    ...T.address,
+                                                    state: e.target.value
+                                                }
+                                            })
+                                        }
+                                        ,
+                                        children: "AC AL AP AM BA CE DF ES GO MA MT MS MG PA PB PR PE PI RJ RN RS RO RR SC SP SE TO".split(" ").map(e => (0,
+                                        s.jsx)("option", {
+                                            children: e
+                                        }, e))
+                                    })]
+                                }), (0,
+                                s.jsxs)("fieldset", {
+                                    className: "shop-shipping-options",
+                                    children: [(0,
+                                    s.jsx)("legend", {
+                                        children: "Escolha o frete:"
+                                    }), n.map(e => (0,
+                                    s.jsxs)("label", {
+                                        className: "shop-shipping-option",
+                                        "data-selected": R === e.id,
+                                        children: [(0,
+                                        s.jsx)("input", {
+                                            type: "radio",
+                                            name: "shipping",
+                                            value: e.id,
+                                            checked: R === e.id,
+                                            disabled: es,
+                                            onChange: () => L(e.id)
+                                        }), (0,
+                                        s.jsxs)("span", {
+                                            children: [(0,
+                                            s.jsx)("strong", {
+                                                children: e.name
+                                            }), (0,
+                                            s.jsxs)("small", {
+                                                children: [e.days, "full" === e.id && (0,
+                                                s.jsx)("b", {
+                                                    className: "shop-full",
+                                                    children: "ϟ FULL"
+                                                })]
+                                            })]
+                                        }), (0,
+                                        s.jsx)("strong", {
+                                            children: e.amount ? w(e.amount) : "Grátis"
+                                        })]
+                                    }, e.id))]
+                                }), (0,
+                                s.jsx)("button", {
+                                    className: "shop-button",
+                                    children: "Ir Para Pagamento"
+                                }), J && (0,
+                                s.jsx)("div", {
+                                    className: "shop-error",
+                                    role: "alert",
+                                    children: J
+                                })]
+                            })]
+                        }) : (0,
+                        s.jsxs)(s.Fragment, {
+                            children: [(0,
+                            s.jsx)("p", {
+                                children: O < 2 ? "Preencha seus dados para continuar" : T.address.street ? `${T.address.street}, ${T.address.number} \xb7 ${T.address.city}/${T.address.state}` : "Entrega informada no pedido"
+                            }), O > 2 && !es && (0,
+                            s.jsx)("button", {
+                                className: "shop-edit",
+                                onClick: () => U(2),
+                                children: "Editar entrega"
+                            })]
+                        })]
+                    })]
+                }), (0,
+                s.jsxs)("section", {
+                    className: "shop-card shop-payment " + (O < 3 ? "shop-inactive" : ""),
+                    children: [(0,
+                    s.jsxs)("div", {
+                        className: "shop-heading",
+                        children: [(0,
+                        s.jsxs)("h2", {
+                            children: [(0,
+                            s.jsx)("b", {
+                                children: el ? (0,
+                                s.jsx)(g.Check, {
+                                    size: 13
+                                }) : S.length
+                            }), "Pagamento"]
+                        }), (0,
+                        s.jsxs)("small", {
+                            children: [S.length, " de ", S.length]
+                        })]
+                    }), O < 3 ? (0,
+                    s.jsx)("p", {
+                        children: N ? "Preencha seus dados para continuar" : "Preencha os dados de entrega para continuar"
+                    }) : el ? (0,
+                    s.jsxs)("div", {
+                        className: "shop-paid",
+                        children: [(0,
+                        s.jsx)(f, {
+                            size: 48
+                        }), (0,
+                        s.jsx)("h3", {
+                            children: "Pagamento confirmado!"
+                        }), (0,
+                        s.jsx)("p", {
+                            children: "Seu pedido foi recebido. Guarde o número abaixo para acompanhar com a loja."
+                        }), (0,
+                        s.jsx)("code", {
+                            children: K.id
+                        })]
+                    }) : ed ? (0,
+                    s.jsxs)("div", {
+                        children: [(0,
+                        s.jsx)("h3", {
+                            children: "Cobrança encerrada"
+                        }), (0,
+                        s.jsx)("p", {
+                            children: "Este Pix não está disponível para pagamento. Entre em contato com a loja antes de fazer outro pedido."
+                        })]
+                    }) : (0,
+                    s.jsxs)(s.Fragment, {
+                        children: [(0,
+                        s.jsx)("p", {
+                            children: "Todas as transações são seguras e criptografadas."
+                        }), (0,
+                        s.jsxs)("div", {
+                            className: "shop-pix-panel",
+                            children: [(0,
+                            s.jsxs)("div", {
+                                className: "shop-pix-choice",
+                                children: [(0,
+                                s.jsx)("span", {
+                                    className: "shop-radio"
+                                }), (0,
+                                s.jsx)("img", {
+                                    src: "/checkout-brand/pix-mark.svg",
+                                    width: 36,
+                                    height: 36,
+                                    alt: "Pix"
+                                }), (0,
+                                s.jsx)("strong", {
+                                    children: "PIX"
+                                })]
+                            }), V ? (0,
+                            s.jsxs)("div", {
+                                className: "shop-pix",
+                                children: [Z ? (0,
+                                s.jsxs)(s.Fragment, {
+                                    children: [(0,
+                                    s.jsx)("h3", {
+                                        children: "Escaneie para pagar"
+                                    }), (0,
+                                    s.jsx)("img", {
+                                        src: Z,
+                                        width: 250,
+                                        height: 250,
+                                        alt: "QR Code Pix do pedido"
+                                    }), (0,
+                                    s.jsx)("strong", {
+                                        className: "shop-total-pix",
+                                        children: w(K?.amount_cents || e.amount + _)
+                                    }), (0,
+                                    s.jsx)("p", {
+                                        children: "Abra o app do banco e escaneie o código ou use Pix copia e cola."
+                                    }), (0,
+                                    s.jsxs)("button", {
+                                        className: "shop-button",
+                                        onClick: async () => {
+                                            try {
+                                                await navigator.clipboard.writeText(K.pix.copy_paste),
+                                                ee(!0)
+                                            } catch {
+                                                H("Não foi possível copiar. Selecione o código abaixo.")
+                                            }
+                                        }
+                                        ,
+                                        children: [(0,
+                                        s.jsx)(j.Copy, {
+                                            size: 16
+                                        }), Y ? "Código copiado" : "Copiar código Pix"]
+                                    }), (0,
+                                    s.jsx)("textarea", {
+                                        "aria-label": "Código Pix copia e cola",
+                                        readOnly: !0,
+                                        value: K.pix.copy_paste
+                                    }), (0,
+                                    s.jsx)("small", {
+                                        children: K.pix.expires_at ? "Válido até " + new Date(K.pix.expires_at).toLocaleString("pt-BR") : ""
+                                    }), (0,
+                                    s.jsxs)("p", {
+                                        className: "shop-wait",
+                                        children: [(0,
+                                        s.jsx)(y.default, {
+                                            size: 15
+                                        }), "Aguardando pagamento"]
+                                    })]
+                                }) : (0,
+                                s.jsxs)("p", {
+                                    className: "shop-wait",
+                                    children: [(0,
+                                    s.jsx)(y.default, {}), "Gerando seu Pix…"]
+                                }), (0,
+                                s.jsx)("a", {
+                                    className: "shop-edit",
+                                    href: "/checkout/" + V,
+                                    children: "Abrir link deste pagamento"
+                                })]
+                            }) : (0,
+                            s.jsxs)(s.Fragment, {
+                                children: [(0,
+                                s.jsx)("p", {
+                                    className: "shop-payment-note",
+                                    children: "O prazo para pagar será exibido junto ao código Pix."
+                                }), (0,
+                                s.jsxs)("p", {
+                                    className: "shop-payment-note",
+                                    children: ["Valor no Pix: ", (0,
+                                    s.jsx)("strong", {
+                                        children: w(e.amount + _)
+                                    })]
+                                }), (0,
+                                s.jsx)("button", {
+                                    className: "shop-button",
+                                    disabled: q,
+                                    "aria-busy": q,
+                                    onClick: () => void eo(),
+                                    children: q ? (0,
+                                    s.jsxs)(s.Fragment, {
+                                        children: [(0,
+                                        s.jsx)(y.default, {
+                                            size: 18,
+                                            className: "shop-spinner",
+                                            "aria-hidden": "true"
+                                        }), "Gerando Pix…"]
+                                    }) : es ? "Tentar novamente o mesmo pedido" : "Finalizar Compra"
+                                })]
+                            })]
+                        })]
+                    }), 3 === O && J && (0,
+                    s.jsx)("div", {
+                        className: "shop-error",
+                        role: "alert",
+                        children: J
+                    })]
+                }), (0,
+                s.jsxs)("aside", {
+                    className: "shop-summary",
+                    children: [(0,
+                    s.jsxs)("section", {
+                        className: "shop-card shop-order-summary",
+                        "data-expanded": $,
+                        children: [(0,
+                        s.jsxs)("button", {
+                            className: "shop-summary-toggle",
+                            type: "button",
+                            "aria-expanded": $,
+                            "aria-controls": "shop-summary-content",
+                            onClick: () => z(!$),
+                            children: [(0,
+                            s.jsx)("span", {
+                                children: "Resumo do pedido"
+                            }), (0,
+                            s.jsx)("strong", {
+                                children: w(K?.amount_cents ?? e.amount + _)
+                            }), (0,
+                            s.jsx)(m, {
+                                size: 16
+                            })]
+                        }), (0,
+                        s.jsxs)("div", {
+                            className: "shop-summary-content",
+                            id: "shop-summary-content",
+                            children: [(0,
+                            s.jsxs)("dl", {
+                                children: [(0,
+                                s.jsxs)("div", {
+                                    children: [(0,
+                                    s.jsx)("dt", {
+                                        children: "Produtos (1)"
+                                    }), (0,
+                                    s.jsx)("dd", {
+                                        children: w(K?.product?.amount ?? e.amount)
+                                    })]
+                                }), !N && (0,
+                                s.jsxs)("div", {
+                                    className: "shop-delivery-total " + (K?.product?.shipping ?? _ ? "" : "shop-free-delivery"),
+                                    children: [(0,
+                                    s.jsx)("dt", {
+                                        children: "Entrega"
+                                    }), (0,
+                                    s.jsx)("dd", {
+                                        children: K?.product?.shipping ?? _ ? w(K?.product?.shipping ?? _) : "Grátis"
+                                    })]
+                                }), (0,
+                                s.jsxs)("div", {
+                                    className: "shop-total",
+                                    children: [(0,
+                                    s.jsx)("dt", {
+                                        children: "Total"
+                                    }), (0,
+                                    s.jsx)("dd", {
+                                        children: w(K?.amount_cents ?? e.amount + _)
+                                    })]
+                                })]
+                            }), (0,
+                            s.jsxs)("div", {
+                                className: "shop-product",
+                                children: [(0,
+                                s.jsx)("img", {
+                                    src: e.image_url,
+                                    alt: e.name
+                                }), (0,
+                                s.jsxs)("div", {
+                                    children: [(0,
+                                    s.jsx)("strong", {
+                                        children: K?.product?.name ?? e.name
+                                    }), (0,
+                                    s.jsx)("small", {
+                                        children: "Quantidade: 1"
+                                    })]
+                                }), (0,
+                                s.jsx)("span", {
+                                    children: w(K?.product?.amount ?? e.amount)
+                                })]
+                            })]
+                        })]
+                    }), !!e.reviews?.length && (0,
+                    s.jsx)("div", {
+                        className: "shop-desktop-reviews",
+                        children: (0,
+                        s.jsx)(i, {
+                            reviews: e.reviews
+                        })
+                    }), e.description && (0,
+                    s.jsxs)("section", {
+                        className: "shop-card shop-product-description",
+                        children: [(0,
+                        s.jsx)("h2", {
+                            children: "Sobre o produto"
+                        }), (0,
+                        s.jsx)("p", {
+                            className: "shop-description",
+                            children: e.description
+                        })]
+                    })]
+                }), !!e.reviews?.length && (0,
+                s.jsx)("div", {
+                    className: "shop-mobile-reviews",
+                    children: (0,
+                    s.jsx)(i, {
+                        reviews: e.reviews
+                    })
+                })]
+            }), (0,
+            s.jsxs)("footer", {
+                className: "shop-footer",
+                children: [(0,
+                s.jsx)("span", {
+                    children: "Formas de pagamento:"
+                }), (0,
+                s.jsx)("div", {
+                    className: "shop-payment-brands",
+                    "aria-label": "Bandeiras da loja",
+                    children: ["aura", "discover", "mastercard", "diners", "visa", "amex", "pix", "elo"].map(e => (0,
+                    s.jsx)("img", {
+                        src: `/checkout-brand/${e}.svg`,
+                        width: 38,
+                        height: 25,
+                        alt: e
+                    }, e))
+                }), (0,
+                s.jsx)("small", {
+                    children: "Disponível neste checkout: Pix"
+                }), (0,
+                s.jsx)("small", {
+                    children: "Todos os direitos reservados"
+                })]
+            })]
+        })
+    }
+    ], 70896)
+}
+, 94492, 65649, e => {
+    "use strict";
+    e.s(["recoveryConsent", 0, "Quero receber um lembrete e ajuda pelo WhatsApp se não concluir o pagamento deste pedido.", "recoveryMessage", 0, "Sou a Juliana aqui do suporte ao cliente. Eu vi que você gerou o pedido do Kit Panelas da promoção, mas acabou não finalizando o pagamento!\n\nGostaria de saber se ficou com alguma dúvida e como posso te ajudar na finalização?"], 94492);
+    let s = (0,
+    e.i(56420).default)("user-round", [["circle", {
+        cx: "12",
+        cy: "8",
+        r: "5",
+        key: "1hypcn"
+    }], ["path", {
+        d: "M20 21a8 8 0 0 0-16 0",
+        key: "rfgkzh"
+    }]]);
+    e.s(["UserRound", 0, s], 65649)
+}
+, 89664, e => {
+    "use strict";
+    let s = (0,
+    e.i(56420).default)("check", [["path", {
+        d: "M20 6 9 17l-5-5",
+        key: "1gmf2c"
+    }]]);
+    e.s(["Check", 0, s], 89664)
+}
+, 8734, 56420, 16933, 51757, 43420, e => {
+    "use strict";
+    var s = e.i(71645)
+      , a = e.i(96661);
+    let t = e => {
+        let s = e.replace(/^([A-Z])|[\s-_]+(\w)/g, (e, s, a) => a ? a.toUpperCase() : s.toLowerCase());
+        return s.charAt(0).toUpperCase() + s.slice(1)
+    }
+    ;
+    var r = e.i(5014);
+    let i = (e, i) => {
+        let n = (0,
+        s.forwardRef)( ({className: n, ...o}, l) => (0,
+        s.createElement)(r.default, {
+            ref: l,
+            iconNode: i,
+            className: (0,
+            a.mergeClasses)(`lucide-${t(e).replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase()}`, `lucide-${e}`, n),
+            ...o
+        }));
+        return n.displayName = t(e),
+        n
+    }
+    ;
+    e.s(["default", 0, i], 56420);
+    let n = i("copy", [["rect", {
+        width: "14",
+        height: "14",
+        x: "8",
+        y: "8",
+        rx: "2",
+        ry: "2",
+        key: "17jyea"
+    }], ["path", {
+        d: "M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2",
+        key: "zix9uf"
+    }]]);
+    e.s(["Copy", 0, n], 8734);
+    let o = i("circle-check", [["circle", {
+        cx: "12",
+        cy: "12",
+        r: "10",
+        key: "1mglay"
+    }], ["path", {
+        d: "m9 12 2 2 4-4",
+        key: "dzmm74"
+    }]]);
+    e.s(["default", 0, o], 16933),
+    e.s(["CheckCircle2", 0, o], 51757);
+    let l = i("info", [["circle", {
+        cx: "12",
+        cy: "12",
+        r: "10",
+        key: "1mglay"
+    }], ["path", {
+        d: "M12 16v-4",
+        key: "1dtifu"
+    }], ["path", {
+        d: "M12 8h.01",
+        key: "e9boi3"
+    }]]);
+    e.s(["default", 0, l], 43420)
+}
+, 58379, e => {
+    "use strict";
+    let s = (0,
+    e.i(56420).default)("loader-circle", [["path", {
+        d: "M21 12a9 9 0 1 1-6.219-8.56",
+        key: "13zald"
+    }]]);
+    e.s(["default", 0, s])
+}
+, 96661, 5014, e => {
+    "use strict";
+    let s = (...e) => e.filter( (e, s, a) => !!e && "" !== e.trim() && a.indexOf(e) === s).join(" ").trim();
+    e.s(["mergeClasses", 0, s], 96661);
+    var a = e.i(71645)
+      , t = {
+        xmlns: "http://www.w3.org/2000/svg",
+        width: 24,
+        height: 24,
+        viewBox: "0 0 24 24",
+        fill: "none",
+        stroke: "currentColor",
+        strokeWidth: 2,
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+    };
+    let r = (0,
+    a.createContext)({})
+      , i = (0,
+    a.forwardRef)( ({color: e, size: i, strokeWidth: n, absoluteStrokeWidth: o, className: l="", children: d, iconNode: c, ...h}, p) => {
+        let {size: u=24, strokeWidth: m=2, absoluteStrokeWidth: x=!1, color: g="currentColor", className: j=""} = (0,
+        a.useContext)(r) ?? {}
+          , f = o ?? x ? 24 * Number(n ?? m) / Number(i ?? u) : n ?? m;
+        return (0,
+        a.createElement)("svg", {
+            ref: p,
+            ...t,
+            width: i ?? u ?? t.width,
+            height: i ?? u ?? t.height,
+            stroke: e ?? g,
+            strokeWidth: f,
+            className: s("lucide", j, l),
+            ...!d && !(e => {
+                for (let s in e)
+                    if (s.startsWith("aria-") || "role" === s || "title" === s)
+                        return !0;
+                return !1
+            }
+            )(h) && {
+                "aria-hidden": "true"
+            },
+            ...h
+        }, [...c.map( ([e,s]) => (0,
+        a.createElement)(e, s)), ...Array.isArray(d) ? d : [d]])
+    }
+    );
+    e.s(["default", 0, i], 5014)
+}
+]);
